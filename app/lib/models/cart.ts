@@ -1,10 +1,12 @@
 import mongoose from "mongoose"
 
+
+const { ObjectId } = mongoose.Schema
 const cartSchema =new  mongoose.Schema({
     products: [
         {
             product: {
-                type: mongoose.Schema.ObjectId,
+                type: ObjectId,
                 ref:"Product"
             },
             name: {
@@ -14,7 +16,7 @@ const cartSchema =new  mongoose.Schema({
                 type: String
             },
             amount: {
-                type: mongoose.Schema.ObjectId,
+                type: ObjectId,
                 ref:"Product"
             },
            vendor: {
@@ -40,8 +42,8 @@ const cartSchema =new  mongoose.Schema({
     cartTotal: Number,
     totalAfterDiscount: Number,
     user: {
-        type: mongoose.Schema.ObjectId,
-        ref:"UserModel"
+        type: ObjectId,
+        ref:"userModel"
     }
     
 }, {
